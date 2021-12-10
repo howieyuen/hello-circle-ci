@@ -21,7 +21,7 @@ jobs:
           command: docker run hello-circle-ci:v0.1 $showVersion $echoInfo
           environment:
             showVersion: "true"
-            echoInfo: "hello world"
+            echoInfo: "xxx"
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
