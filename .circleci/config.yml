@@ -17,6 +17,20 @@ jobs:
       - run:
           name: "Say hello"
           command: "echo Hello, World!"
+  docker-xx:  
+    # Add steps to the job
+    # See: https://circleci.com/docs/2.0/configuration-reference/#steps
+    steps:
+      - checkout
+      - run:
+          name: Docker Build
+          command: docker build -t hello-circle-ci:v0.1 .
+      - run:
+          name: Docker Run
+          command: docker run hello-circle-ci:v0.1
+          environment:
+            showVersion: true
+            echoInfo: "hello world"
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
@@ -24,3 +38,4 @@ workflows:
   say-hello-workflow:
     jobs:
       - say-hello
+      - docker-xx
