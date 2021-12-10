@@ -17,7 +17,11 @@ jobs:
       - run:
           name: "Say hello"
           command: "echo Hello, World!"
-  docker-xx:  
+  kusion-interact:  
+      # Specify the execution environment. You can specify an image from Dockerhub or use one of our Convenience Images from CircleCI's Developer Hub.
+      # See: https://circleci.com/docs/2.0/configuration-reference/#docker-machine-macos-windows-executor
+    machine:
+      image: ubuntu-2004:202010-01
     # Add steps to the job
     # See: https://circleci.com/docs/2.0/configuration-reference/#steps
     steps:
@@ -38,4 +42,4 @@ workflows:
   say-hello-workflow:
     jobs:
       - say-hello
-      - docker-xx
+      - kusion-interact
