@@ -8,8 +8,7 @@ jobs:
   kusion-interact:  
     # Specify the execution environment. You can specify an image from Dockerhub or use one of our Convenience Images from CircleCI's Developer Hub.
     # See: https://circleci.com/docs/2.0/configuration-reference/#docker-machine-macos-windows-executor
-    machine:
-      image: ubuntu-2004:202010-01
+    machine: true
     # Add steps to the job
     # See: https://circleci.com/docs/2.0/configuration-reference/#steps
     steps:
@@ -19,7 +18,7 @@ jobs:
           command: docker build -t hello-circle-ci:v0.1 .
       - run:
           name: Docker Run
-          command: docker run hello-circle-ci:v0.1 ${showVersion} ${echoInfo}
+          command: docker run hello-circle-ci:v0.1 $showVersion $echoInfo
           environment:
             showVersion: "true"
             echoInfo: "hello world"
