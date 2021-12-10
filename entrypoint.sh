@@ -11,4 +11,4 @@ if [ "$showVersion" = "true" ]; then
     params="$params -V"
 fi
 
-$APP_PATH $params
+$APP_PATH $params $echoInfo
