@@ -19,7 +19,7 @@ jobs:
           command: docker build -t hello-circle-ci:v0.1 .
       - run:
           name: Docker Run
-          command: docker run hello-circle-ci:v0.1
+          command: docker run hello-circle-ci:v0.1 ${showVersion} ${echoInfo}
           environment:
             showVersion: "true"
             echoInfo: "hello world"

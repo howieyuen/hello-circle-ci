@@ -3,8 +3,8 @@ set -e
 
 APP_PATH="/app/go-cli-prototype"
 
-showVersion=${showVersion}
-echoInfo=${echoInfo}
+showVersion=$1
+echoInfo=$2
 params=""
 
 if [ "$showVersion" = "true" ]; then
